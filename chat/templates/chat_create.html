@@ -1,0 +1,52 @@
+<center><strong><h3><u>Welcome to the chat room ! </u></h3></strong></center>
+<style>
+ body {background-color: powderblue;}
+ h3{ background-color: white; width: 250px; }
+ul {font-size: 16px;  }
+ div{border: 1px solid; background-color: white; overflow: scroll; height: 395px;}</style>
+
+
+<div>{% for i in object_list %}
+
+<ul> {{i.sender}} <!-- {{i.name}} --> : {{i.chat_field}} </ul>
+
+<!-- {{ request.user }}
+ -->
+{% endfor %}</div>
+
+
+
+
+
+<form method='POST' action='' enctype='multipart/form-data'>{% csrf_token %}
+{{ form.as_p }}
+
+<input type='submit' class="btn btn-info" value='SEND CHAT'/>
+
+
+</form>
+
+
+<u><b> Chat with </b></u>
+ 
+ 	<form action="/chat/">   
+    <input type="submit" value="Rupesh">
+    </form>
+  
+    <form action="/chat/">   
+    <input type="submit" value="Abhishek">
+ 	</form>
+
+<!-- {% for i in object_list %}
+    
+    {% if forloop.first %}
+    <p>First</p>
+    {% else %}
+    <p>Second</p>
+    {% endif %}
+    {{ object }}</li>
+
+
+
+{% endfor %} -->
+	
